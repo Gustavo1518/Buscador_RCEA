@@ -1,25 +1,77 @@
 {
-  "name": "buscador-rcea-vuejs",
-  "version": "0.1.0",
-  "private": true,
-  "scripts": {
-    "serve": "vue-cli-service serve",
-    "build": "vue-cli-service build",
-    "lint": "vue-cli-service lint"
+  "name": "@conacyt/buscador-cvu",
+  "version": "0.0.3",
+  "description": "El componente de VueJS buscador de Personas Físicas por CVU",
+  "keywords": [
+    "vue",
+    "vuejs",
+    "vue-component",
+    "cvu",
+    "buscador"
+  ],
+  "author": {
+    "name": "Roberto Villarejo Martínez",
+    "email": "robertovillarejo@outlook.com"
   },
+  "main": "dist/index.js",
+  "module": "dist/index.module.js",
+  "unpkg": "dist/index.umd.js",
+  "license": "MIT",
+  "scripts": {
+    "serve": "vue-cli-service serve example/main.ts & npm run fake-api",
+    "build": "bili",
+    "lint": "vue-cli-service lint",
+    "fake-api": "json-server --watch db.json"
+  },
+  "files": [
+    "/dist",
+    "/src"
+  ],
   "dependencies": {
-    "vue": "^2.6.10",
-    "vue-class-component": "^7.0.2",
-    "vue-property-decorator": "^8.3.0"
+    "@fortawesome/fontawesome-svg-core": "1.2.15",
+    "@fortawesome/free-brands-svg-icons": "^5.11.2",
+    "@fortawesome/free-regular-svg-icons": "^5.11.2",
+    "@fortawesome/free-solid-svg-icons": "5.7.2",
+    "@fortawesome/vue-fontawesome": "0.1.5",
+    "axios": "^0.19.0",
+    "bootstrap": "^4.4.1",
+    "bootstrap-vue": "2.0.0-rc.11",
+    "jquery": "^3.4.1",
+    "popper.js": "^1.15.0",
+    "tslib": "^1.10.0",
+    "vue-class-component": "^7.1.0",
+    "vue-property-decorator": "^8.2.1"
   },
   "devDependencies": {
-    "@vue/cli-plugin-eslint": "^4.1.0",
-    "@vue/cli-plugin-typescript": "^4.1.0",
-    "@vue/cli-service": "^4.1.0",
+    "@babel/core": "^7.4.0",
+    "@vue/babel-preset-app": "^3.5.1",
+    "@vue/cli-plugin-babel": "^3.5.0",
+    "@vue/cli-plugin-eslint": "^3.5.0",
+    "@vue/cli-plugin-typescript": "^3.5.0",
+    "@vue/cli-plugin-unit-jest": "^3.5.0",
+    "@vue/cli-service": "^3.5.0",
+    "@vue/eslint-config-prettier": "^4.0.1",
     "@vue/eslint-config-typescript": "^4.0.0",
-    "eslint": "^5.16.0",
+    "@vue/test-utils": "1.0.0-beta.29",
+    "autoprefixer": "^9.5.0",
+    "babel-core": "7.0.0-bridge.0",
+    "babel-eslint": "^10.0.1",
+    "bili": "^4.7.1",
+    "eslint": "^5.8.0",
     "eslint-plugin-vue": "^5.0.0",
-    "typescript": "~3.5.3",
+    "fibers": "^3.1.1",
+    "json-server": "^0.15.1",
+    "lint-staged": "^8.1.4",
+    "node-sass": "^4.11.0",
+    "postcss": "^7.0.14",
+    "rollup": "^1.7.2",
+    "rollup-plugin-babel": "^4.3.2",
+    "rollup-plugin-typescript2": "^0.20.1",
+    "rollup-plugin-vue": "4.3.2",
+    "sass": "^1.17.2",
+    "sass-loader": "^7.1.0",
+    "typescript": "^3.2.1",
+    "vue": "^2.6.10",
     "vue-template-compiler": "^2.6.10"
   },
   "eslintConfig": {
@@ -29,16 +81,66 @@
     },
     "extends": [
       "plugin:vue/essential",
-      "eslint:recommended",
+      "@vue/prettier",
       "@vue/typescript"
     ],
-    "rules": {},
+    "rules": {
+      "no-console": "off"
+    },
     "parserOptions": {
       "parser": "@typescript-eslint/parser"
     }
   },
+  "postcss": {
+    "plugins": {
+      "autoprefixer": {}
+    }
+  },
   "browserslist": [
     "> 1%",
-    "last 2 versions"
-  ]
+    "last 2 versions",
+    "not ie <= 8"
+  ],
+  "jest": {
+    "moduleFileExtensions": [
+      "js",
+      "jsx",
+      "json",
+      "vue",
+      "ts",
+      "tsx"
+    ],
+    "transform": {
+      "^.+\\.vue$": "vue-jest",
+      ".+\\.(css|styl|less|sass|scss|svg|png|jpg|ttf|woff|woff2)$": "jest-transform-stub",
+      "^.+\\.tsx?$": "ts-jest"
+    },
+    "transformIgnorePatterns": [
+      "/node_modules/"
+    ],
+    "moduleNameMapper": {
+      "^@/(.*)$": "<rootDir>/src/$1"
+    },
+    "snapshotSerializers": [
+      "jest-serializer-vue"
+    ],
+    "testMatch": [
+      "**/tests/unit/**/*.spec.(js|jsx|ts|tsx)|**/__tests__/*.(js|jsx|ts|tsx)"
+    ],
+    "testURL": "http://localhost/",
+    "globals": {
+      "ts-jest": {
+        "babelConfig": true
+      }
+    }
+  },
+  "gitHooks": {
+    "pre-commit": "lint-staged"
+  },
+  "lint-staged": {
+    "*.{js,vue}": [
+      "vue-cli-service lint",
+      "git add"
+    ]
+  }
 }

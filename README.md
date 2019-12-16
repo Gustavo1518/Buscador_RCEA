@@ -1,24 +1,27 @@
-# buscador-rcea-vuejs
+# Buscador de Personas Físicas por CVU
+El componente de VueJS buscador de Personas Físicas por CVU
 
-## Project setup
-```
-npm install
-```
+## Getting started
+Incluye en tu proyecto un archivo `.npmrc` con el siguiente contenido para descargar esta biblioteca:
 
-### Compiles and hot-reloads for development
-```
-npm run serve
+```properties
+registry=https://artifacts.ccd.conacyt.mx/content/groups/npm/
 ```
 
-### Compiles and minifies for production
+O revisa este [link](https://conacyt-arquitectura.github.io/npm/configuracion-cliente-npm) para configurar tu cliente npm con el repostiorio privado.
+
+Para instalar con npm usa `npm i @conacyt/hello-world`  
+Para instalar con yarn usa `yarn add @conacyt/hello-world`
+
+## Uso
 ```
-npm run build
+<div id="app">
+    <buscador-cvu></buscador-cvu>
+</div>
 ```
 
-### Lints and fixes files
-```
-npm run lint
-```
+## Desarrollo
+Para desarrollo con Hot Replace Module usa `npm run serve` para servir la carpeta `example`.
 
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+### Building
+Usa `npm run build` para generar los archivos de distribución en la carpeta `dist`.

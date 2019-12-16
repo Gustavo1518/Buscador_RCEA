@@ -1,0 +1,1 @@
+declare module 'bootstrap-vue/es/components/alert/alert';

@@ -1,0 +1,74 @@
+{
+    "cvu": [
+        {
+            "id": "1",
+            "cvu": "1",
+            "curp": "XXXXXXXXXXXXXXXXXX",
+            "titulo": "Mtro.",
+            "nombre": "Juan",
+            "apellidoPaterno": "Pérez",
+            "apellidoMaterno": "Pérez",
+            "rfc": null,
+            "genero": "Masculino",
+            "correo": "vopafexeto@mailsoul.com",
+            "login": "vopafexeto@mailsoul.com",
+            "gradoAcademico": "Maestría en Ciencias",
+            "nivelsni": null,
+            "instituciones": [
+                {
+                    "nombre": "Centro de Investigación e Innovación en Tecnologías de la Información y Comunicación (INFOTEC)",
+                    "localidad": null,
+                    "municipio": null,
+                    "clave": "19516",
+                    "entidadFederativa": {
+                        "id": 9,
+                        "nombre": "CIUDAD DE MÉXICO"
+                    }
+                }
+            ],
+            "domicilios": [
+                {
+                    "direccion": "CIUDAD DE MÉXICO, México",
+                    "tipo": "Domicilio de residencia"
+                }
+            ],
+            "paisResidencia": "México",
+            "rcea": null
+        },
+        {
+            "id": "2",
+            "cvu": "2",
+            "curp": "XXXXXXXXXXXXXXXXXX",
+            "titulo": "Mtro.",
+            "nombre": "Pedro",
+            "apellidoPaterno": "Pérez",
+            "apellidoMaterno": "Pérez",
+            "rfc": null,
+            "genero": "Masculino",
+            "correo": "vopafexeto@mailsoul.com",
+            "login": "vopafexeto@mailsoul.com",
+            "gradoAcademico": "Maestría en Ciencias",
+            "nivelsni": null,
+            "instituciones": [
+                {
+                    "nombre": "Centro de Investigación e Innovación en Tecnologías de la Información y Comunicación (INFOTEC)",
+                    "localidad": null,
+                    "municipio": null,
+                    "clave": "19516",
+                    "entidadFederativa": {
+                        "id": 9,
+                        "nombre": "CIUDAD DE MÉXICO"
+                    }
+                }
+            ],
+            "domicilios": [
+                {
+                    "direccion": "CIUDAD DE MÉXICO, México",
+                    "tipo": "Domicilio de residencia"
+                }
+            ],
+            "paisResidencia": "México",
+            "rcea": null
+        }
+    ]
+}
