@@ -98,4 +98,7 @@ body {
 .search-box:not(:valid) ~ .close-icon {
   display: none;
 }
+.search-box {
+  width: 300px;
+}
 </style>
