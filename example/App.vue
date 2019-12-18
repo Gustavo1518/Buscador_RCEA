@@ -6,7 +6,7 @@
     <div class="row">
       <div class="col-3" />
       <div class="col-3">
-        <buscador-rcea v-model="personaFisicaLeft">
+        <buscador-rcea v-model="personaFisicaLeft" class="cvu-1">
           <template v-slot:message="slotProps">
             <h5>Mostrando mensaje usando slot</h5>
             {{ slotProps.message }}
@@ -41,3 +41,8 @@ export default Vue.extend({
   }
 });
 </script>
+<style>
+.cvu-1 {
+  margin-left: -30%;
+}
+</style>

@@ -1,5 +1,5 @@
 # Buscador de Personas Físicas por CVU
-El componente de VueJS buscador de Personas Físicas por CVU
+El componente de VueJS buscador de Personas Físicas por RCEA
 
 ## Getting started
 Incluye en tu proyecto un archivo `.npmrc` con el siguiente contenido para descargar esta biblioteca:
