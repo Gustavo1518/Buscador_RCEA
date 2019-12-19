@@ -36,14 +36,14 @@ export default class Buscadorrcea extends Vue {
     public isSearching: boolean = false;
 
     public get options(): Options {
-        return (<any>this).$CVU_SEARCHER_DEFAULT_OPTIONS || defaultConfig;
+        return (<any>this).$RCEA_SEARCHER_DEFAULT_OPTIONS || defaultConfig;
     }
 
     public search() {
         if (this.searchKey) {
             this.isSearching = true;
             new rceaService(this.options.host)
-                .retrieveByCvu(this.searchKey)
+                .retrieveByRcea(this.searchKey)
                 .then(pf => {
                     this.$emit('input', pf);
                     this.searchKey = '';
