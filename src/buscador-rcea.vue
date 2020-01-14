@@ -10,18 +10,16 @@
         >{{ alertMessage }}</b-alert
       >
     </slot>
-    <form v-on:submit.prevent="search()">
+    <form v-on:submit.prevent="search()" class="control">
       <div class="search-wrapper">
         <input
-          type="text"
           name="focus"
           required
           class="search-box"
           placeholder="Enter search term"
           v-model.trim="searchKey"
-          v-on:keyup.enter="search()"
         />
-        <button class="close-icon" @click="clear"></button>
+        <button type="button" class="close-icon" @click="clear"></button>
       </div>
       <button
         type="submit"
@@ -30,21 +28,12 @@
         :disabled="searchButtonDisabled()"
       >
         <font-awesome-icon icon="search"></font-awesome-icon>&nbsp;
-        <span v-if="!isSearching">Buscar</span>
-        <span v-else>Buscando...</span>
       </button>
     </form>
   </div>
 </template>
 <script lang="ts" src="./buscador-rcea.component.ts"></script>
 <style>
-body {
-  background-color: #f1f1f1;
-  font-family: Helvetica, Arial, Verdana;
-}
-.redfamily {
-  color: red;
-}
 .search-box,
 .close-icon,
 .search-wrapper {
@@ -52,19 +41,17 @@ body {
   padding: 10px;
 }
 .search-wrapper {
-  width: 500px;
+  width: 80%;
   margin: auto;
-  margin-top: 50px;
+  margin-top: 30px;
 }
 .search-box {
   width: 80%;
   border: 1px solid #ccc;
   outline: 0;
   border-radius: 15px;
-}
-.search-box:focus {
-  box-shadow: 0 0 15px 5px #b0e0ee;
-  border: 2px solid #bebede;
+  max-width: 500%;
+  text-align: center;
 }
 .close-icon {
   border: 1px solid transparent;
@@ -82,7 +69,7 @@ body {
   position: absolute;
   background-color: #fa9595;
   z-index: 1;
-  right: 35px;
+  right: 30px;
   top: 0;
   bottom: 0;
   margin: auto;
@@ -98,7 +85,14 @@ body {
 .search-box:not(:valid) ~ .close-icon {
   display: none;
 }
-.search-box {
-  width: 300px;
+.control {
+  display: flex;
+  align-items: center;
+}
+.btn-success {
+  margin-top: 10%;
+  width: 40%;
+  position: static;
+  margin-left: -15%;
 }
 </style>
